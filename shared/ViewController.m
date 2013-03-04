@@ -7,10 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "Config.h"
 
 @interface ViewController ()
 {
-    IBOutlet UIWebView *webView;
+    IBOutlet UILabel *publisherLabel;
 }
 
 @end
@@ -22,12 +23,9 @@
 {
     [super viewDidLoad];
     
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
-    NSDictionary *plistDict = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    self.view.backgroundColor = [Config backgroundColor];
     
-    NSURL *url = [NSURL URLWithString:[plistDict objectForKey:@"homeURL"]];
-    NSLog(@"\npath: %@\ndict: %@\nurl: %@", plistPath, plistDict, url);
-    [webView loadRequest:[NSURLRequest requestWithURL:url]];
+    publisherLabel.text = [NSString stringWithFormat:@"Published by %@", [Config objectForKey:@"PublisherName"]];
 }
 
 - (void)didReceiveMemoryWarning

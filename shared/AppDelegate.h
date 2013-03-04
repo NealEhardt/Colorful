@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  Colorful
 //
-//  Created by groovebug on 10/23/12.
+//  Created by Neal Ehardt on 10/23/12.
 //  Copyright (c) 2012 groovebug. All rights reserved.
 //
 
